@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Elaina Hill — Software Engineer</title>
+  <meta name="description" content="Elaina Hill — Software Engineer. AI/ML, Web, Cybersecurity, Cloud. Security+, Network+, AWS Cloud Practitioner. Seeking software engineering roles." />
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --accent1:#7c5cff;
+      --accent2:#00d4ff;
+      --muted:#9aa6b2;
+      --glass: rgba(255,255,255,0.04);
+      --glass-2: rgba(255,255,255,0.02);
+      --success:#22c55e;
+      --danger:#ef4444;
+      --max-width:1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: radial-gradient(1200px 600px at 10% 10%, rgba(124,92,255,0.12), transparent 8%),
+                  radial-gradient(1000px 500px at 90% 90%, rgba(0,212,255,0.06), transparent 10%),
+                  var(--bg);
+      color:#e6eef6;
+      -webkit-font-smoothing:antialiased;
+      line-height:1.45;
+      padding:32px 20px;
+      display:flex;
+      justify-content:center;
+      align-items:flex-start;
+    }
+
+    .wrap{
+      width:100%;
+      max-width:var(--max-width);
+      display:grid;
+      grid-template-columns: 360px 1fr;
+      gap:28px;
+    }
+
+    /* MOBILE STACK */
+    @media (max-width:880px){
+      .wrap{grid-template-columns:1fr; padding-bottom:48px}
+    }
+
+    /* SIDEBAR */
+    .sidebar{
+      background:linear-gradient(180deg,var(--glass),var(--glass-2));
+      border:1px solid rgba(255,255,255,0.04);
+      border-radius:14px;
+      padding:22px;
+      position:sticky;
+      top:24px;
+      height:fit-content;
+      box-shadow: 0 10px 30px rgba(2,6,23,0.6);
+    }
+    .avatar{
+      width:100%;
+      display:flex;
+      gap:14px;
+      align-items:center;
+    }
+    .avatar svg{width:84px;height:84px;border-radius:12px;flex-shrink:0}
+    .name{font-size:20px;font-weight:800;line-height:1}
+    .role{color:var(--muted);font-size:13px;margin-top:6px}
+
+    .contact{
+      margin-top:16px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+    .contact .line{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:14px}
+    .chip {background:linear-gradient(90deg,var(--accent1),var(--accent2));padding:8px 12px;border-radius:999px;color:#041226;font-weight:700;font-size:13px;display:inline-block}
+
+    .badges{margin-top:12px;display:flex;flex-wrap:wrap;gap:8px}
+    .badge{background:rgba(255,255,255,0.04);padding:6px 10px;border-radius:8px;font-size:13px;color:var(--muted);border:1px solid rgba(255,255,255,0.02)}
+
+    .sidebar hr{border:0;height:1px;background:linear-gradient(90deg,transparent,#1b2a3a,transparent);margin:16px 0;border-radius:2px}
+
+    /* MAIN */
+    .main{
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent 30%);
+      border-radius:14px;
+      padding:22px;
+      border:1px solid rgba(255,255,255,0.03);
+      box-shadow: 0 6px 30px rgba(2,6,23,0.45);
+    }
+
+    .hero{
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+      align-items:flex-start;
+    }
+    .headline{max-width:62%}
+    @media (max-width:880px){
+      .hero{flex-direction:column}
+      .headline{max-width:100%}
+    }
+
+    .headline h1{margin:0;font-size:22px;font-weight:800;letter-spacing:-0.4px}
+    .headline p{color:var(--muted);margin-top:8px;font-size:15px}
+
+    .cta-row{display:flex;gap:12px;margin-top:14px;flex-wrap:wrap}
+    .btn{
+      background:linear-gradient(90deg,var(--accent1),var(--accent2));
+      color:#031021;padding:10px 14px;border-radius:10px;border:0;font-weight:700;cursor:pointer;font-size:14px;
+      display:inline-flex;align-items:center;gap:10px;box-shadow:0 6px 20px rgba(124,92,255,0.12);
+    }
+    .btn.secondary{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);font-weight:600}
+    .btn.ghost{background:transparent;color:var(--accent2);border:1px dashed rgba(0,212,255,0.08)}
+
+    .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+    .tag{background:rgba(255,255,255,0.03);padding:6px 10px;border-radius:8px;font-size:13px;color:var(--muted)}
+
+    /* sections */
+    section{margin-top:20px}
+    h2{font-size:15px;margin:0 0 10px 0;font-weight:700}
+    p.lead{color:var(--muted);margin:0;font-size:14px}
+
+    .skills-grid{display:flex;flex-wrap:wrap;gap:12px}
+    .skill{background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:10px;border-radius:10px;min-width:140px;flex:1 1 160px}
+    .skill h4{margin:0;font-size:13px}
+    .bar{height:8px;background:rgba(255,255,255,0.04);border-radius:8px;margin-top:8px;overflow:hidden}
+    .bar > i{display:block;height:100%;background:linear-gradient(90deg,var(--accent1),var(--accent2));width:20%;border-radius:8px}
+
+    /* timeline */
+    .timeline{display:flex;flex-direction:column;gap:12px}
+    .item{background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.02)}
+    .item .meta{display:flex;justify-content:space-between;gap:12px;align-items:center}
+    .muted{color:var(--muted);font-size:13px}
+    .item h3{margin:8px 0 6px 0;font-size:15px}
+    .bullet{display:block;margin-top:8px;color:var(--muted);font-size:14px}
+
+    .certs{display:flex;gap:10px;flex-wrap:wrap}
+    .cert{background:linear-gradient(90deg,#081226, rgba(255,255,255,0.02));padding:8px 10px;border-radius:10px;border:1px solid rgba(255,255,255,0.02);font-size:13px;color:var(--muted)}
+
+    footer{margin-top:18px;color:var(--muted);font-size:13px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+    .small{font-size:13px;color:var(--muted)}
+
+    /* mini utilities */
+    .copy{cursor:pointer;color:var(--muted);font-size:13px;border:1px dashed rgba(255,255,255,0.03);padding:6px;border-radius:8px}
+    .toast{position:fixed;left:50%;transform:translateX(-50%);bottom:26px;background:#031226;padding:10px 16px;border-radius:999px;border:1px solid rgba(255,255,255,0.04);box-shadow:0 8px 30px rgba(2,12,32,0.65);display:none;color:#bfefff}
+    .download-note{font-size:13px;color:var(--muted);margin-top:8px}
+  </style>
+</head>
+<body>
+  <div class="wrap" role="main">
+    <!-- SIDEBAR -->
+    <aside class="sidebar" aria-label="Profile sidebar">
+      <div class="avatar">
+        <!-- geometric avatar / initials -->
+        <svg viewBox="0 0 120 120" role="img" aria-labelledby="avTitle">
+          <title id="avTitle">Elaina Hill avatar</title>
+          <defs>
+            <linearGradient id="g1" x1="0" x2="1">
+              <stop offset="0" stop-color="#7c5cff"/>
+              <stop offset="1" stop-color="#00d4ff"/>
+            </linearGradient>
+          </defs>
+          <rect width="120" height="120" rx="18" fill="url(#g1)"></rect>
+          <g transform="translate(12,20)" fill="#031226">
+            <rect x="0" y="0" width="96" height="80" rx="10" opacity="0.06"></rect>
+            <text x="48" y="54" text-anchor="middle" fill="white" font-family="Inter, sans-serif" font-weight="800" font-size="40">EH</text>
+          </g>
+        </svg>
+
+        <div>
+          <div class="name">ELAINA HILL</div>
+          <div class="role">Software Engineer — AI | ML | Cloud | Security</div>
+          <div style="margin-top:8px"><span class="chip">Master of ELAINA</span></div>
+        </div>
+      </div>
+
+      <div class="contact" aria-label="Contact">
+        <div class="line"><strong class="muted">Location</strong><span style="margin-left:auto">Fort Washington, MD</span></div>
+        <div class="line"><strong class="muted">Phone</strong><span style="margin-left:auto">(202) 538-5941</span></div>
+        <div class="line"><strong class="muted">Email</strong>
+          <span style="margin-left:auto;display:flex;gap:8px;align-items:center">
+            <span id="emailText">elainamichellehill@gmail.com</span>
+            <button class="copy" id="copyEmail" title="Copy email">Copy</button>
+          </span>
+        </div>
+        <div class="line" style="margin-top:6px">
+          <strong class="muted">LinkedIn</strong>
+          <a href="https://www.linkedin.com/in/elaina-hill-03448a245/" id="linkedinBtn" style="margin-left:auto;color:var(--accent2);text-decoration:none;font-weight:700">Open Profile ↗</a>
+        </div>
+
+        <div class="badges" aria-hidden="true" style="margin-top:10px">
+          <div class="badge">Security+</div>
+          <div class="badge">Network+</div>
+          <div class="badge">AWS Cloud Practitioner</div>
+          <div class="badge">AWS Dev — in progress</div>
+        </div>
+
+        <hr>
+
+        <div>
+          <h2 style="font-size:13px;margin-bottom:8px">Education</h2>
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <div>
+              <div style="font-weight:700">University of Maryland Global Campus (UMGC)</div>
+              <div class="muted" style="font-size:13px;margin-top:4px">B.S. Computer Science — 2025 · GPA: 4.0</div>
+            </div>
+          </div>
+          <div class="download-note">Completed college early; took Calculus I–III before graduating high school.</div>
+        </div>
+
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main" aria-label="Main content">
+      <div class="hero">
+        <div class="headline">
+          <h1>Software Engineer • AI & Machine Learning • Secure Cloud Systems</h1>
+          <p class="lead">Software Engineer with 5 years of hands-on experience in AI, ML, and web technologies. I build intelligent, secure, scalable systems — from research prototypes to production cloud services. Looking for roles where machine intelligence and security meet real-world impact.</p>
+
+          <div class="cta-row" role="toolbar" aria-label="Primary actions">
+
+            <a class="btn secondary" href="#" id="contactMail" onclick="event.preventDefault();document.getElementById('copyEmail').click();">Contact (Copy Email)</a>
+
+            <a class="btn ghost" id="viewLinkedIn" href="#" onclick="event.preventDefault();openLinkedIn()">View LinkedIn</a>
+          </div>
+
+          <div class="tags" aria-hidden="true">
+            <div class="tag">AI Research</div>
+            <div class="tag">TensorFlow / PyTorch</div>
+            <div class="tag">AWS</div>
+            <div class="tag">Security+</div>
+            <div class="tag">React / Node.js</div>
+          </div>
+        </div>
+
+        <div style="min-width:220px;display:flex;flex-direction:column;gap:12px;align-items:flex-end">
+          <div style="background:linear-gradient(180deg,#071226,rgba(255,255,255,0.02));padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,0.02);text-align:right">
+            <div style="font-size:12px;color:var(--muted)">Experience</div>
+            <div style="font-weight:800;font-size:22px">5 yrs</div>
+            <div style="color:var(--muted);font-size:13px">AI, Web, Cloud</div>
+          </div>
+
+          <div style="background:linear-gradient(90deg,var(--accent1),var(--accent2));padding:10px;border-radius:12px;color:#021323;font-weight:700">Open to full-time roles</div>
+        </div>
+
+      </div>
+
+      <!-- SKILLS -->
+      <section aria-labelledby="skillsHeading">
+        <h2 id="skillsHeading">Technical Skills</h2>
+        <div class="skills-grid" style="margin-top:12px">
+          <div class="skill">
+            <h4>Languages</h4>
+            <div class="bar" aria-hidden="true"><i style="width:92%"></i></div>
+            <div class="muted" style="margin-top:8px">Python · Java · C++ · JavaScript · Swift · SQL</div>
+          </div>
+
+          <div class="skill">
+            <h4>Machine Learning</h4>
+            <div class="bar" aria-hidden="true"><i style="width:86%"></i></div>
+            <div class="muted" style="margin-top:8px">TensorFlow · PyTorch · Keras · Scikit-learn · OpenCV · KMeans</div>
+          </div>
+
+          <div class="skill">
+            <h4>Cloud & Dev</h4>
+            <div class="bar" aria-hidden="true"><i style="width:78%"></i></div>
+            <div class="muted" style="margin-top:8px">AWS (EC2, RDS/Aurora, Bedrock) · Node.js · React</div>
+          </div>
+
+          <div class="skill">
+            <h4>Security & Networking</h4>
+            <div class="bar" aria-hidden="true"><i style="width:72%"></i></div>
+            <div class="muted" style="margin-top:8px">CompTIA Security+ · Network+ · Secure APIs · CORS</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- EXPERIENCE -->
+      <section aria-labelledby="expHeading">
+        <h2 id="expHeading">Experience</h2>
+        <div class="timeline" style="margin-top:12px">
+
+          <article class="item" aria-labelledby="nextLevel">
+            <div class="meta">
+              <div style="font-weight:700">Next Level Solutions — Software Engineer (Contract)</div>
+              <div class="muted">May 2022 — Present · Washington, D.C.</div>
+            </div>
+            <h3 id="nextLevel">Full-stack & Cloud</h3>
+            <div class="bullet">Built a React + Node.js corporate IT site; backend on Express connecting to AWS Aurora (MySQL). Implemented responsive UI/UX, CORS-secured APIs, and agile delivery. Integrated AWS Bedrock + Text Embedding Titan + Pinecone for vector search and advanced AI retrieval.</div>
+          </article>
+
+          <article class="item" aria-labelledby="nasa">
+            <div class="meta">
+              <div style="font-weight:700">NASA — Software Engineering Intern (Heliophysics)</div>
+              <div class="muted">Summer 2024 · Greenbelt, MD</div>
+            </div>
+            <h3 id="nasa">AI for Solar Wind Classification</h3>
+            <div class="bullet">Developed unsupervised KMeans model to classify solar wind data; used Scikit-learn, NumPy, Pandas, Librosa for signal processing and analysis. Integrated work with research pipelines to improve data analysis efficiency.</div>
+          </article>
+
+          <article class="item" aria-labelledby="ai4all">
+            <div class="meta">
+              <div style="font-weight:700">AI4ALL @ University of Maryland — Researcher</div>
+              <div class="muted">Summer 2021 · College Park, MD</div>
+            </div>
+            <h3 id="ai4all">Speech Emotion Recognition (CNN)</h3>
+            <div class="bullet">Built a vocal emotion detection model using Librosa, TensorFlow, and Keras; designed CNN, handled feature extraction (MFCCs), preprocessing, and evaluation metrics; presented results to academic community.</div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- EDUCATION & CERTS -->
+      <section aria-labelledby="eduHeading">
+        <h2 id="eduHeading">Education & Certifications</h2>
+        <div style="display:flex;gap:18px;margin-top:12px;flex-wrap:wrap">
+          <div style="flex:1;min-width:260px">
+            <div style="font-weight:700">University of Maryland Global Campus (UMGC)</div>
+            <div class="muted">B.S. Computer Science — 2025 · GPA 4.0</div>
+            <div style="margin-top:8px;color:var(--muted)">Honors: Phi Theta Kappa (2022), NCWIT Honorable Mention (2022). MIT Blueprint Hackathon (2022) participant.</div>
+            <div style="margin-top:10px" class="small">Took Calculus I–III prior to high school graduation. Graduated college 3 years early.</div>
+          </div>
+
+          <div style="flex:0 0 260px">
+            <div class="certs">
+              <div class="cert">CompTIA Security+</div>
+              <div class="cert">CompTIA Network+</div>
+              <div class="cert">AWS Cloud Practitioner</div>
+              <div class="cert">AWS Developer — in progress (expected Sep 2025)</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer>
+        <div class="small">Want a downloadable resume? Use "Save as PDF" above — it prints only the resume area cleanly.</div>
+        <div class="small">Last updated: <strong>Aug 8, 2025</strong></div>
+      </footer>
+    </main>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast">Copied to clipboard</div>
+
+  <script>
+    // ---------- DATA (customize) ----------
+    const PROFILE = {
+      fullName: "ELAINA HILL",
+      linkedinUrl: "https://www.linkedin.com/in/elaina-hill-03448a245/",
+      email: "elainamichellehill@gmail.com",
+      phone: "(202) 538-5941"
+    };
+
+    // Hook up LinkedIn URL (open in new tab)
+    function openLinkedIn() {
+      const url = PROFILE.linkedinUrl;
+      if(!url || url.includes("your-linkedin-handle")){
+        alert("Replace the placeholder LinkedIn URL in the site's JS with your real LinkedIn profile URL.");
+        return;
+      }
+      window.open(url, "_blank", "noopener");
+    }
+
+    document.getElementById('linkedinBtn').addEventListener('click', function(e){
+      e.preventDefault(); openLinkedIn();
+    });
+    document.getElementById('viewLinkedIn').addEventListener('click', function(e){
+      e.preventDefault(); openLinkedIn();
+    });
+
+    // Copy email
+    const copyBtn = document.getElementById('copyEmail');
+    const emailText = document.getElementById('emailText').textContent;
+    copyBtn.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(emailText);
+        showToast("Email copied ✓");
+      } catch(e) {
+        // fallback
+        const el = document.createElement('input');
+        el.value = emailText;
+        document.body.appendChild(el);
+        el.select();
+        document.execCommand('copy');
+        document.body.removeChild(el);
+        showToast("Email copied ✓");
+      }
+    });
+
+    // Download/Print as PDF (prints page but we attempt to hide UI extras)
+    document.getElementById('downloadResume').addEventListener('click', () => {
+      // Print-friendly adjustments via CSS injection
+      const style = document.createElement('style');
+      style.id = 'print-style';
+      style.innerHTML = `
+        @media print{
+          body{background:white;color:#000}
+          .sidebar, .cta-row, .btn, .copy, .tags, footer, .download-note{display:none !important}
+          .main{border:none;background:transparent;box-shadow:none;padding:0}
+          .wrap{grid-template-columns:1fr !important}
+        }
+      `;
+      document.head.appendChild(style);
+      window.print();
+      // cleanup
+      setTimeout(()=>{ document.getElementById('print-style')?.remove(); }, 800);
+    });
+
+    // Toast
+    const toast = document.getElementById('toast');
+    let toastTimer = null;
+    function showToast(msg){
+      toast.textContent = msg || "Done";
+      toast.style.display = 'block';
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(()=> toast.style.display='none', 2200);
+    }
+
+    // Small accessibility enhancement: keyboard shortcut "c" copies email
+    window.addEventListener('keydown', (e) => {
+      if(e.key.toLowerCase() === 'c' && (e.ctrlKey || e.metaKey) === false){
+        // avoid conflict with other shortcuts
+        showToast("Press Ctrl/Cmd+C to copy — or click the Copy button.");
+      }
+    });
+
+    // Replace placeholders with profile data (phone/email)
+    document.getElementById('emailText').textContent = PROFILE.email;
+    // If user wants, can also show phone (already hard-coded). Optionally confirm real LinkedIn URL above.
+
+    // Animate skill bars on in-view
+    function animateBars(){
+      document.querySelectorAll('.bar i').forEach((el, idx) => {
+        const target = el.style.width || '50%';
+        el.style.width = '4%';
+        setTimeout(()=> el.style.transition='width 900ms cubic-bezier(.2,.9,.3,1)', 50);
+        setTimeout(()=> el.style.width = target, 120);
+      });
+    }
+    window.addEventListener('load', animateBars);
+
+    // Quick accessibility: focus outline for keyboard users
+    document.body.addEventListener('keydown', (e)=>{
+      if(e.key === 'Tab') document.documentElement.style.setProperty('--focus', '2px solid rgba(124,92,255,0.6)');
+    });
+  </script>
+</body>
+</html>
